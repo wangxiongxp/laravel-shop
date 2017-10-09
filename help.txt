@@ -1,0 +1,93 @@
+
+
+http://test.newdemo.zhcart.com/admintest.php?m=admin&c=admin&a=default
+
+
+
+
+
+
+
+
+步骤：
+初始化项目（composer略过）
+composer create-project laravel/laravel laravel-example
+
+激活内置 Auth 系统
+php artisan make:auth
+
+env配置数据库环境
+
+进行数据库迁移（migration）
+php artisan migrate //新建了users表和migrations表
+
+Eloquent 是 Laravel 内置的 ORM 系统，我们的 Model 类将继承自 Eloquent 提供的 Model 类，
+然后，就天生具备了数十个异常强大的函数，从此想干啥事儿都是一行代码就搞定
+php artisan make:model Article
+
+接下来我们生成对应 Article 这个 Model 的 Migration 和 Seeder
+php artisan make:migration create_article_table
+
+使用 artisan 生成 Seeder
+php artisan make:seeder ArticleSeeder
+
+
+
+开发插件三件套
+在先聊测试数据填充器seeder之前，先装上开发插件三件套，开发神器。先不管这能干些啥，装上再说。
+1、barryvdh/laravel-debugbar
+
+composer require barryvdh/laravel-debugbar --dev
+
+2、barryvdh/laravel-ide-helper
+
+composer require barryvdh/laravel-ide-helper --dev
+
+3、mpociot/laravel-test-factory-helper
+
+composer require mpociot/laravel-test-factory-helper --dev
+
+然后在config/app.php文件中填上：
+**
+ *Develop Plugin
+*/
+Barryvdh\Debugbar\ServiceProvider::class,
+Mpociot\LaravelTestFactoryHelper\TestFactoryHelperServiceProvider::class,
+Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class,
+
+
+{"grant_type":"password",
+"client_id":"2",
+"client_secret":"x6KNV0voCgAQSQMIuUizUFu3UiALFPvyYsoFlihL",
+"username":"admin",
+"password":"123456",
+"scope":"*"}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

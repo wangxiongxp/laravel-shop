@@ -1,0 +1,17 @@
+th.sorting {
+	background: no-repeat url(sorting.png) #308CBB;
+	background-position: -10px -50px;
+	padding-left: 20px;
+	cursor: pointer;
+}
+
+th.sorting-asc {
+	background-position: -10px -25px;
+}
+
+th.sorting-desc {
+	background-position: -10px 0px;
+}
+
+
+
